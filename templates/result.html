@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clustering Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Customer Clustering Results</h1>
+
+        <h3>📥 Download Clustered Data</h3>
+        <a href="{{ clustered_data }}" download class="btn">Download CSV</a>
+
+        <h3>📋 Cluster Analysis</h3>
+        <div class="table-container">
+            {{ cluster_analysis | safe }}
+        </div>
+
+        <h3>📊 Summary Statistics</h3>
+        <div class="table-container">
+            {{ summary_stats | safe }}
+        </div>
+
+        <h3>📌 Histograms of Features</h3>
+        <img src="{{ hist_img }}" alt="Histograms">
+
+        <h3>🔗 Dendrogram</h3>
+        <img src="{{ dendrogram_img }}" alt="Dendrogram">
+
+        <h3>🎨 Scatter Plot</h3>
+        <img src="{{ scatter_img }}" alt="Scatter Plot">
+
+        <h3>🔍 Pair Plot</h3>
+        <img src="{{ pairplot_img }}" alt="Pair Plot">
+
+        <br>
+        <a href="/" class="btn">Back to Upload</a>
+    </div>
+</body>
+</html>
